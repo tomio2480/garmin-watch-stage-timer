@@ -1,0 +1,13 @@
+project.manifest = manifest.xml
+
+# 型チェックレベル: Strict
+project.typecheck = 3
+
+# 最適化レベル
+project.optimization = 2
+
+# ソースファイル
+base.sourcePath = source
+
+# リソースファイル
+base.resourcePath = resources

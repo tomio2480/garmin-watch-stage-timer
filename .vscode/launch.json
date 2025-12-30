@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "monkeyc",
+            "request": "launch",
+            "name": "Run on Venu 2 Plus",
+            "device": "venu2plus",
+            "stopAtLaunch": false
+        },
+        {
+            "type": "monkeyc",
+            "request": "launch",
+            "name": "Run on Venu 2",
+            "device": "venu2",
+            "stopAtLaunch": false
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+# Build outputs
+bin/
+*.prg
+*.prg.debug.xml
+gen/
+internal-mir/
+mir/
+
+# Connect IQ generated files
+*.iq
+
+# VS Code local settings (keep .vscode/settings.json and launch.json)
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Developer key (sensitive)
+developer_key
+*.der
+*.key
+
+# Temporary files
+Untitled-*.txt

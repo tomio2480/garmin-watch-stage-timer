@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="3">
+    <iq:application entry="StageTimerApp" id="9f456883-79ac-4e5f-9af9-1df3422d895c" launcherIcon="@Drawables.LauncherIcon"
+                    minSdkVersion="4.0.0" name="@Strings.AppName" type="watch-app" version="1.0.0">
+        <iq:products>
+            <!-- Venu シリーズ -->
+            <iq:product id="venu2" />
+            <iq:product id="venu2s" />
+            <iq:product id="venu2plus" />
+            <iq:product id="venu3" />
+            <iq:product id="venu3s" />
+            <iq:product id="venusq2" />
+
+            <!-- Epix シリーズ -->
+            <iq:product id="epix2" />
+            <iq:product id="epix2pro42mm" />
+            <iq:product id="epix2pro47mm" />
+            <iq:product id="epix2pro51mm" />
+
+            <!-- Forerunner シリーズ（タッチ対応） -->
+            <iq:product id="fr265" />
+            <iq:product id="fr265s" />
+            <iq:product id="fr965" />
+
+            <!-- Fenix シリーズ（タッチ対応） -->
+            <iq:product id="fenix7" />
+            <iq:product id="fenix7s" />
+            <iq:product id="fenix7x" />
+            <!-- Fenix 8 は SDK 8.4.0 時点で未対応のため除外 -->
+        </iq:products>
+
+        <iq:permissions>
+            <!-- 本アプリは外部通信やセンサーを使用しないため、パーミッションを一切要求しない -->
+        </iq:permissions>
+
+        <iq:languages>
+            <iq:language>eng</iq:language>
+            <iq:language>jpn</iq:language>
+        </iq:languages>
+    </iq:application>
+</iq:manifest>
