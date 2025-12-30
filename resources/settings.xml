@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+    <setting propertyKey="@Properties.preset" title="@Strings.presetTitle">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.presetCustom</listEntry>
+            <listEntry value="1">@Strings.presetLT</listEntry>
+            <listEntry value="2">@Strings.presetStandard</listEntry>
+            <listEntry value="3">@Strings.presetLong</listEntry>
+            <listEntry value="4">@Strings.presetPresentation</listEntry>
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.duration" title="@Strings.durationTitle">
+        <settingConfig type="numeric" min="10" max="3600" />
+    </setting>
+
+    <setting propertyKey="@Properties.alert1" title="@Strings.alert1Title">
+        <settingConfig type="numeric" min="0" max="3599" />
+    </setting>
+
+    <setting propertyKey="@Properties.alert2" title="@Strings.alert2Title">
+        <settingConfig type="numeric" min="0" max="3598" />
+    </setting>
+</settings>

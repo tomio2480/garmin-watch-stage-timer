@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <strings>
     <string id="AppName">Stage Timer</string>
+
+    <!-- Settings strings -->
+    <string id="presetTitle">Preset</string>
+    <string id="presetCustom">Custom</string>
+    <string id="presetLT">LT (5min)</string>
+    <string id="presetStandard">Standard (15min)</string>
+    <string id="presetLong">Long (20min)</string>
+    <string id="presetPresentation">Presentation (45min)</string>
+
+    <string id="durationTitle">Duration (seconds)</string>
+    <string id="alert1Title">Alert 1 (seconds)</string>
+    <string id="alert2Title">Alert 2 (seconds)</string>
 </strings>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<properties>
+    <!-- Duration in seconds (10-3600) -->
+    <property id="duration" type="number">900</property>
+
+    <!-- Alert 1 in seconds -->
+    <property id="alert1" type="number">300</property>
+
+    <!-- Alert 2 in seconds -->
+    <property id="alert2" type="number">60</property>
+
+    <!-- Preset selection (0=Custom, 1=LT, 2=Standard, 3=Long, 4=Presentation) -->
+    <property id="preset" type="number">0</property>
+</properties>
