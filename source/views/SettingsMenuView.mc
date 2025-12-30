@@ -14,6 +14,14 @@ class SettingsMenuView extends WatchUi.Menu2 {
     function initialize() {
         Menu2.initialize({:title => "Settings"});
 
+        // プリセット項目を最初に追加
+        addItem(new WatchUi.MenuItem(
+            "Presets",
+            "Select preset",
+            :presets,
+            {}
+        ));
+
         var state = gTimerState;
         if (state != null) {
             addItem(new WatchUi.MenuItem(
@@ -75,7 +83,14 @@ class SettingsMenuDelegate extends WatchUi.Menu2InputDelegate {
             return;
         }
 
-        if (id == :duration) {
+        if (id == :presets) {
+            // プリセット選択メニューを表示
+            WatchUi.pushView(
+                new PresetMenuView(),
+                new PresetMenuDelegate(_menuView),
+                WatchUi.SLIDE_LEFT
+            );
+        } else if (id == :duration) {
             // Duration: 10秒 ~ 3600秒（1時間）
             WatchUi.pushView(
                 new TimePickerView(:duration, "Duration", 10, 3600),
