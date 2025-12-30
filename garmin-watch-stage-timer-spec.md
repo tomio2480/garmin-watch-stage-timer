@@ -1,4 +1,4 @@
-# 登壇用タイマーアプリ設計書 v3
+# Stage Timer 設計書 v3
 
 ## 1. 概要
 
@@ -1086,8 +1086,8 @@ erDiagram
 
 ```
 src/
-├── PresentationTimerApp.mc      // アプリケーションエントリ
-├── PresentationTimerDelegate.mc // 入力イベントハンドラ
+├── StageTimerApp.mc             // アプリケーションエントリ
+├── StageTimerDelegate.mc        // 入力イベントハンドラ
 │
 ├── views/
 │   ├── SettingsView.mc          // 設定画面
