@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="garmin-watch-stage-timer-icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.84051978"
+     inkscape:cx="453.29094"
+     inkscape:cy="494.93184"
+     inkscape:window-width="1918"
+     inkscape:window-height="1032"
+     inkscape:window-x="1906"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g4"
+       inkscape:export-filename="app-icon-70.png"
+       inkscape:export-xdpi="13.44"
+       inkscape:export-ydpi="13.44">
+      <circle
+         style="fill:#000000;fill-opacity:1;stroke-width:0.339005"
+         id="path1"
+         cx="99.476273"
+         cy="130.95476"
+         r="66.145836" />
+      <rect
+         style="fill:#0000ff;fill-opacity:1;stroke-width:0.10841"
+         id="rect2-1-7"
+         width="50.76226"
+         height="6.6145835"
+         x="-181.41064"
+         y="123.43472"
+         transform="rotate(-90)" />
+      <rect
+         style="fill:#ff00ff;fill-opacity:1;stroke-width:0.116197"
+         id="rect2"
+         width="58.317108"
+         height="6.6145835"
+         x="97.583458"
+         y="127.48803" />
+      <rect
+         style="fill:#ffff00;fill-opacity:1;stroke-width:0.116197"
+         id="rect2-1"
+         width="58.317108"
+         height="6.6145835"
+         x="-132.12209"
+         y="95.854195"
+         transform="rotate(-90)" />
+      <g
+         id="g3">
+        <circle
+           style="fill:#ffffff;fill-opacity:1;stroke-width:0.205914"
+           id="path2"
+           cx="99.161484"
+           cy="130.95476"
+           r="6.6145835" />
+        <path
+           id="path1-8"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:0.305105"
+           d="M 99.16148,71.423506 A 59.53125,59.53125 0 0 0 39.63023,130.95476 59.53125,59.53125 0 0 0 99.16148,190.48601 59.53125,59.53125 0 0 0 158.69274,130.95476 59.53125,59.53125 0 0 0 99.16148,71.423506 Z m 0,6.614584 A 52.916668,52.916668 0 0 1 152.07815,130.95476 52.916668,52.916668 0 0 1 99.16148,183.87143 52.916668,52.916668 0 0 1 46.244813,130.95476 52.916668,52.916668 0 0 1 99.16148,78.03809 Z" />
+      </g>
+    </g>
+  </g>
+</svg>
