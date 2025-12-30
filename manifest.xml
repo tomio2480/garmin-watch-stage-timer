@@ -35,7 +35,6 @@
 
         <iq:languages>
             <iq:language>eng</iq:language>
-            <iq:language>jpn</iq:language>
         </iq:languages>
     </iq:application>
 </iq:manifest>
