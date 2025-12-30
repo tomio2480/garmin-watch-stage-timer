@@ -11,3 +11,24 @@ base.sourcePath = source
 
 # リソースファイル
 base.resourcePath = resources
+
+# デバイス別ランチャーアイコン（サイズ別）
+# 60x60: fr265, fr265s, epix2, epix2pro42mm, epix2pro47mm, epix2pro51mm
+fr265.resourcePath = $(fr265.resourcePath);resources-launcher-60x60
+fr265s.resourcePath = $(fr265s.resourcePath);resources-launcher-60x60
+epix2.resourcePath = $(epix2.resourcePath);resources-launcher-60x60
+epix2pro42mm.resourcePath = $(epix2pro42mm.resourcePath);resources-launcher-60x60
+epix2pro47mm.resourcePath = $(epix2pro47mm.resourcePath);resources-launcher-60x60
+epix2pro51mm.resourcePath = $(epix2pro51mm.resourcePath);resources-launcher-60x60
+
+# 61x61: venu2s
+venu2s.resourcePath = $(venu2s.resourcePath);resources-launcher-61x61
+
+# 65x65: fr965
+fr965.resourcePath = $(fr965.resourcePath);resources-launcher-65x65
+
+# 70x70: venu2, venu2plus, venu3, venu3s
+venu2.resourcePath = $(venu2.resourcePath);resources-launcher-70x70
+venu2plus.resourcePath = $(venu2plus.resourcePath);resources-launcher-70x70
+venu3.resourcePath = $(venu3.resourcePath);resources-launcher-70x70
+venu3s.resourcePath = $(venu3s.resourcePath);resources-launcher-70x70

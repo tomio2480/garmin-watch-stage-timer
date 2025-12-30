@@ -94,7 +94,7 @@ class SettingsMenuDelegate extends WatchUi.Menu2InputDelegate {
             // Duration: 10秒 ~ 5400秒（90分）
             WatchUi.pushView(
                 new TimePickerView(:duration, "Duration", 10, 5400),
-                new TimePickerDelegate(:duration, _menuView),
+                new TimePickerDelegate(_menuView),
                 WatchUi.SLIDE_LEFT
             );
         } else if (id == :alert1) {
@@ -105,7 +105,7 @@ class SettingsMenuDelegate extends WatchUi.Menu2InputDelegate {
             }
             WatchUi.pushView(
                 new TimePickerView(:alert1, "Alert 1", 0, maxAlert1),
-                new TimePickerDelegate(:alert1, _menuView),
+                new TimePickerDelegate(_menuView),
                 WatchUi.SLIDE_LEFT
             );
         } else if (id == :alert2) {
@@ -116,7 +116,7 @@ class SettingsMenuDelegate extends WatchUi.Menu2InputDelegate {
             }
             WatchUi.pushView(
                 new TimePickerView(:alert2, "Alert 2", 0, maxAlert2),
-                new TimePickerDelegate(:alert2, _menuView),
+                new TimePickerDelegate(_menuView),
                 WatchUi.SLIDE_LEFT
             );
         }

@@ -180,12 +180,10 @@ class TimePickerView extends WatchUi.View {
 
 // 時間選択デリゲート
 class TimePickerDelegate extends WatchUi.BehaviorDelegate {
-    private var _settingId as Symbol;
     private var _menuView as SettingsMenuView;
 
-    function initialize(settingId as Symbol, menuView as SettingsMenuView) {
+    function initialize(menuView as SettingsMenuView) {
         BehaviorDelegate.initialize();
-        _settingId = settingId;
         _menuView = menuView;
     }
 
