@@ -10,15 +10,10 @@ enum TimerStatus {
 
 // タイマーの状態を管理するクラス
 class TimerState {
-    // 設定値
-    public var durationMinutes as Number = 15;
-    public var alert1Minutes as Number = 5;
-    public var alert2Minutes as Number = 1;
-
-    // テスト用設定（秒単位）- 0 の場合は本番設定を使用
-    private var _testDurationSeconds as Number = 0;
-    private var _testAlert1Seconds as Number = 0;
-    private var _testAlert2Seconds as Number = 0;
+    // 設定値（秒単位）
+    public var durationSeconds as Number = 900;  // 15分 = 900秒
+    public var alert1Seconds as Number = 300;    // 5分 = 300秒
+    public var alert2Seconds as Number = 60;     // 1分 = 60秒
 
     // 現在の状態
     public var status as TimerStatus = TIMER_STOPPED;
@@ -30,16 +25,13 @@ class TimerState {
     public var finalCountStarted as Boolean = false;
 
     function initialize() {
+        SettingsStorage.loadSettings(self);
         reset();
     }
 
     // タイマーをリセット
     function reset() as Void {
-        if (_testDurationSeconds > 0) {
-            remainingSeconds = _testDurationSeconds;
-        } else {
-            remainingSeconds = durationMinutes * 60;
-        }
+        remainingSeconds = durationSeconds;
         status = TIMER_STOPPED;
         alert1Triggered = false;
         alert2Triggered = false;
@@ -100,33 +92,14 @@ class TimerState {
         return minutes.format("%02d") + ":" + seconds.format("%02d");
     }
 
-    // アラート1の残り秒数を取得
-    function getAlert1Seconds() as Number {
-        if (_testAlert1Seconds > 0) {
-            return _testAlert1Seconds;
-        }
-        return alert1Minutes * 60;
-    }
-
-    // アラート2の残り秒数を取得
-    function getAlert2Seconds() as Number {
-        if (_testAlert2Seconds > 0) {
-            return _testAlert2Seconds;
-        }
-        return alert2Minutes * 60;
-    }
-
     // 現在アラート1の状態か
     function isAlert1Active() as Boolean {
-        var alert1Sec = getAlert1Seconds();
-        var alert2Sec = getAlert2Seconds();
-        return remainingSeconds <= alert1Sec && remainingSeconds > alert2Sec;
+        return remainingSeconds <= alert1Seconds && remainingSeconds > alert2Seconds;
     }
 
     // 現在アラート2の状態か
     function isAlert2Active() as Boolean {
-        var alert2Sec = getAlert2Seconds();
-        return remainingSeconds <= alert2Sec && remainingSeconds > 5;
+        return remainingSeconds <= alert2Seconds && remainingSeconds > 5;
     }
 
     // ファイナルカウント中か（残り5秒以下）

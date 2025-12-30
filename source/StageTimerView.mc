@@ -24,6 +24,12 @@ class StageTimerView extends WatchUi.View {
     }
 
     function onShow() as Void {
+        // 設定画面から戻ったときにタイマーをリセット
+        var state = gTimerState;
+        if (state != null && state.status == TIMER_STOPPED) {
+            state.reset();
+        }
+
         // 1秒ごとのタイマーを開始
         _timer = new Timer.Timer();
         _timer.start(method(:onTimerTick), 1000, true);
@@ -58,8 +64,8 @@ class StageTimerView extends WatchUi.View {
     // バイブレーションのチェックとトリガー
     private function checkAndTriggerVibration(state as TimerState, vibManager as VibrationManager, prevSeconds as Number) as Void {
         var currentSeconds = state.remainingSeconds;
-        var alert1Sec = state.getAlert1Seconds();
-        var alert2Sec = state.getAlert2Seconds();
+        var alert1Sec = state.alert1Seconds;
+        var alert2Sec = state.alert2Seconds;
 
         // アラート1: 残り時間がアラート1秒数に達した瞬間
         if (prevSeconds > alert1Sec && currentSeconds <= alert1Sec && !state.alert1Triggered) {
@@ -148,7 +154,7 @@ class StageTimerView extends WatchUi.View {
                 width / 2,
                 height * 3 / 4,
                 Graphics.FONT_XTINY,
-                "Tap to Start",
+                "Swipe for Settings",
                 Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
             );
         }

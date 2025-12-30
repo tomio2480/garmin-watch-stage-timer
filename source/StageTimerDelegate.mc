@@ -97,4 +97,19 @@ class StageTimerDelegate extends WatchUi.BehaviorDelegate {
         // 実行中・一時停止中は戻るボタンを無効化
         return true;
     }
+
+    // 下ボタンまたは下スワイプで設定画面
+    function onNextPage() as Boolean {
+        var state = gTimerState;
+        if (state != null && state.status == TIMER_STOPPED) {
+            var menuView = new SettingsMenuView();
+            WatchUi.pushView(
+                menuView,
+                new SettingsMenuDelegate(menuView),
+                WatchUi.SLIDE_UP
+            );
+            return true;
+        }
+        return false;
+    }
 }
