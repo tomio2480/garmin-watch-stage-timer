@@ -5,6 +5,7 @@ import Toybox.Timer;
 
 // グローバルなタイマー状態（アプリ全体で共有）
 var gTimerState as TimerState?;
+var gVibrationManager as VibrationManager?;
 
 class StageTimerView extends WatchUi.View {
     private var _timer as Timer.Timer?;
@@ -13,6 +14,9 @@ class StageTimerView extends WatchUi.View {
         View.initialize();
         if (gTimerState == null) {
             gTimerState = new TimerState();
+        }
+        if (gVibrationManager == null) {
+            gVibrationManager = new VibrationManager();
         }
     }
 
@@ -26,10 +30,56 @@ class StageTimerView extends WatchUi.View {
     }
 
     function onTimerTick() as Void {
-        if (gTimerState != null) {
-            gTimerState.tick();
+        var state = gTimerState;
+        var vibManager = gVibrationManager;
+
+        if (state != null) {
+            // tick の前の残り秒数を記録
+            var prevSeconds = state.remainingSeconds;
+
+            state.tick();
+
+            // バイブレーション処理
+            if (vibManager != null && state.status == TIMER_RUNNING) {
+                checkAndTriggerVibration(state, vibManager, prevSeconds);
+            }
+
+            // タイムアップ時のバイブレーション開始
+            if (vibManager != null && state.status == TIMER_FINISHED) {
+                if (!vibManager.isTimeUpVibrating()) {
+                    vibManager.startTimeUpVibration();
+                }
+            }
         }
+
         WatchUi.requestUpdate();
+    }
+
+    // バイブレーションのチェックとトリガー
+    private function checkAndTriggerVibration(state as TimerState, vibManager as VibrationManager, prevSeconds as Number) as Void {
+        var currentSeconds = state.remainingSeconds;
+        var alert1Sec = state.getAlert1Seconds();
+        var alert2Sec = state.getAlert2Seconds();
+
+        // アラート1: 残り時間がアラート1秒数に達した瞬間
+        if (prevSeconds > alert1Sec && currentSeconds <= alert1Sec && !state.alert1Triggered) {
+            vibManager.vibrateAlert1();
+            state.alert1Triggered = true;
+        }
+
+        // アラート2: 残り時間がアラート2秒数に達した瞬間
+        if (prevSeconds > alert2Sec && currentSeconds <= alert2Sec && !state.alert2Triggered) {
+            vibManager.vibrateAlert2();
+            state.alert2Triggered = true;
+        }
+
+        // ファイナルカウント: 残り5,4,3,2,1秒で各1回
+        if (currentSeconds <= 5 && currentSeconds >= 1 && prevSeconds != currentSeconds) {
+            if (!state.finalCountStarted || currentSeconds < 5) {
+                vibManager.vibrateFinalCount();
+                state.finalCountStarted = true;
+            }
+        }
     }
 
     function onUpdate(dc as Dc) as Void {
@@ -109,6 +159,10 @@ class StageTimerView extends WatchUi.View {
         if (_timer != null) {
             _timer.stop();
             _timer = null;
+        }
+        // バイブレーションを停止
+        if (gVibrationManager != null) {
+            gVibrationManager.stopTimeUpVibration();
         }
     }
 }

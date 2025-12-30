@@ -15,6 +15,11 @@ class TimerState {
     public var alert1Minutes as Number = 5;
     public var alert2Minutes as Number = 1;
 
+    // テスト用設定（秒単位）- 0 の場合は本番設定を使用
+    private var _testDurationSeconds as Number = 0;
+    private var _testAlert1Seconds as Number = 0;
+    private var _testAlert2Seconds as Number = 0;
+
     // 現在の状態
     public var status as TimerStatus = TIMER_STOPPED;
     public var remainingSeconds as Number = 0;
@@ -30,7 +35,11 @@ class TimerState {
 
     // タイマーをリセット
     function reset() as Void {
-        remainingSeconds = durationMinutes * 60;
+        if (_testDurationSeconds > 0) {
+            remainingSeconds = _testDurationSeconds;
+        } else {
+            remainingSeconds = durationMinutes * 60;
+        }
         status = TIMER_STOPPED;
         alert1Triggered = false;
         alert2Triggered = false;
@@ -93,11 +102,17 @@ class TimerState {
 
     // アラート1の残り秒数を取得
     function getAlert1Seconds() as Number {
+        if (_testAlert1Seconds > 0) {
+            return _testAlert1Seconds;
+        }
         return alert1Minutes * 60;
     }
 
     // アラート2の残り秒数を取得
     function getAlert2Seconds() as Number {
+        if (_testAlert2Seconds > 0) {
+            return _testAlert2Seconds;
+        }
         return alert2Minutes * 60;
     }
 

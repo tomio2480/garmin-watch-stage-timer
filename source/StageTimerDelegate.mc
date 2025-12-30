@@ -57,6 +57,10 @@ class StageTimerDelegate extends WatchUi.BehaviorDelegate {
 
         if (state.status == TIMER_FINISHED) {
             // タイムアップ状態からタップでリセット
+            // バイブレーション停止
+            if (gVibrationManager != null) {
+                gVibrationManager.stopTimeUpVibration();
+            }
             state.reset();
         } else {
             state.toggleStartPause();
