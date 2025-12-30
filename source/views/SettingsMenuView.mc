@@ -91,9 +91,9 @@ class SettingsMenuDelegate extends WatchUi.Menu2InputDelegate {
                 WatchUi.SLIDE_LEFT
             );
         } else if (id == :duration) {
-            // Duration: 10秒 ~ 3600秒（1時間）
+            // Duration: 10秒 ~ 5400秒（90分）
             WatchUi.pushView(
-                new TimePickerView(:duration, "Duration", 10, 3600),
+                new TimePickerView(:duration, "Duration", 10, 5400),
                 new TimePickerDelegate(:duration, _menuView),
                 WatchUi.SLIDE_LEFT
             );

@@ -10,7 +10,7 @@ Stage Timer is a countdown timer designed for speakers and presenters. Track you
 
 ### Features
 
-- Countdown timer from 1 to 60 minutes
+- Countdown timer from 1 to 90 minutes
 - Two customizable alert points with color changes (yellow, magenta)
 - Final 5-second countdown with per-second vibration
 - Time's up screen with continuous vibration

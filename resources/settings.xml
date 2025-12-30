@@ -11,14 +11,14 @@
     </setting>
 
     <setting propertyKey="@Properties.duration" title="@Strings.durationTitle">
-        <settingConfig type="numeric" min="10" max="3600" />
+        <settingConfig type="numeric" min="10" max="5400" />
     </setting>
 
     <setting propertyKey="@Properties.alert1" title="@Strings.alert1Title">
-        <settingConfig type="numeric" min="0" max="3599" />
+        <settingConfig type="numeric" min="0" max="5399" />
     </setting>
 
     <setting propertyKey="@Properties.alert2" title="@Strings.alert2Title">
-        <settingConfig type="numeric" min="0" max="3598" />
+        <settingConfig type="numeric" min="0" max="5398" />
     </setting>
 </settings>
